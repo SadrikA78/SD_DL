@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Обстановка{% endblock %}
+{% block css %}
+<script src="{% static '/polls/plotly/js/plotly.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {% block page %}
+	<!-- Content Header (Page header) -->
+<div class="content-header">
+	<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Информационная обстановка</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content-header -->
+	<!-- Main content -->
+    <section class="content">
+      
+
+	  </section>
+	</div>
+   
+    <!-- /.content -->
+    {% endblock page %}
+{% endblock content %}
+{% block scripts %}
+<script>
+      require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+
+        esriConfig.apiKey = "AAPKe7ebac2aa5574e2dad67e2b3ca85c01ctAA6Qu-ESEZE32ZBQL8pZf2h8mEgvIk22rX59nL0kIeFDU71oA6Qm-t54dG-wTBD";
+
+        const map = new Map({
+          basemap: "arcgis-topographic" // Basemap layer service
+        });
+
+        const view = new MapView({
+          map: map,
+          center: [-118.805, 34.027], // Longitude, latitude
+          zoom: 13, // Zoom level
+          container: "viewDiv" // Div element
+        });
+
+      });
+    </script>
+
+{% endblock %}
