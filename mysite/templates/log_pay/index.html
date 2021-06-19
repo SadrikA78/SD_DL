@@ -3,6 +3,10 @@
 {% block title %}Обстановка{% endblock %}
 {% block css %}
 <script src="{% static '/polls/plotly/js/plotly.js' %}"></script>
+<link rel="stylesheet" href="{% static '/polls/plugins/fullcalendar/main.css' %}">
+<!-- Select2 -->
+<link rel="stylesheet" href="{% static '/polls/plugins/select2/css/select2.min.css' %}">
+<link rel="stylesheet" href="{% static '/polls/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -21,7 +25,221 @@
     <!-- /.content-header -->
 	<!-- Main content -->
     <section class="content">
-      
+     <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+               
+				
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>Материалов</b> <a class="float-right">1674</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Авторов</b> <a class="float-right">785</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Запросов</b> <a class="float-right">43</a>
+                  </li>
+                </ul>
+
+                <a href="#" class="btn btn-primary btn-block"><b><i class="fa fa-cogs" aria-hidden="true"></i>     Перейти на режим PRO</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- About Me Box -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"><b>Настройки</b></h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                      <label class="custom-control-label" for="customSwitch1">  Статьи</label>
+                    </div>
+                  </div>
+
+                <hr>
+
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                      <label class="custom-control-label" for="customSwitch2">Патенты</label>
+                    </div>
+                  </div>
+
+                <hr>
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                      <label class="custom-control-label" for="customSwitch3">Комментарии</label>
+                    </div>
+                  </div>
+
+				<hr>
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch4" checked>
+                      <label class="custom-control-label" for="customSwitch4">Ссылки</label>
+                    </div>
+                  </div>
+
+
+				<hr>
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch5" checked>
+                      <label class="custom-control-label" for="customSwitch5">Журналы</label>
+                    </div>
+                  </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <div class="row">
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>Фронтиры</h3>
+
+                <p>24</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-ruble-sign"></i>
+              </div>
+              <a href="#" class="small-box-footer">Подробнее <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>Сбор</h3>
+
+                <p>19.06.2021 г.</p>
+              </div>
+              <div class="icon">
+                <i class="nav-icon fa fa-history"></i>
+              </div>
+              <a href="#" class="small-box-footer">Проверить <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>Найдено</h3>
+
+                <p>4 новых фронтира</p>
+              </div>
+              <div class="icon">
+                <i class="nav-icon fa fa-superpowers"></i>
+              </div>
+              <a href="#" class="small-box-footer">Анализ <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+              </div><!-- /.card-header -->
+              <div class="card-body">
+               <div class="row">
+          <div class="col-md-12">
+            <!-- Line chart -->
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="far fa-chart-bar"></i>
+                  Кластеры фронтиров
+                </h3>
+
+                <div class="card-tools">
+                </div>
+              </div>
+              <div class="card-body">
+			   <div class="col-12 col-sm-12">
+            <div class="card card-primary card-tabs">
+              <div class="card-header p-0 pt-1">
+                <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Результаты кластеризации</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Новые фронтиры</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">Карта</a>
+                  </li>
+                
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-one-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+			  <img class="img-fluid pad" src="{% static '/images/ward_clusters.png' %}" alt="Photo">
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
+					<div class="select2-purple">
+                    <select class="select2" multiple="multiple" data-placeholder="Нет новых" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                      
+                    <option selected>self-organizing map (SOM) </option>
+                    <option selected>Multimodal Sparsity-Eager</option>
+                    <option selected>Early Warning System to Prediction</option>
+                    <option selected>Ensemble Feature Selection</option>
+                    
+                    </select>
+                  </div>                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
+				{% autoescape off %}
+				  {{ plt_div }}
+				  {% endautoescape %}                  
+				  </div>
+                 
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          
+              </div>
+              <!-- /.card-body-->
+            </div>
+            <!-- /.card -->
+
+          </div>
+          <!-- /.col -->
+			</div>
+          <!-- /.row -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+          </div>
+          <!-- /.col -->
+
+
+
+
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    
 
 	  </section>
 	</div>
@@ -30,23 +248,180 @@
     {% endblock page %}
 {% endblock content %}
 {% block scripts %}
+<!-- Select2 -->
+<script src="{% static '/polls/plugins/select2/js/select2.full.min.js' %}"></script>
+<!-- date-range-picker -->
+<script src="{% static '/polls/plugins/daterangepicker/daterangepicker.js' %}"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="{% static '/polls/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js' %}"></script>
+<!-- InputMask -->
+<script src="{% static '/polls/plugins/moment/moment.min.js' %}"></script>
+<script src="{% static '/polls/plugins/inputmask/min/jquery.inputmask.bundle.min.js' %}"></script>
+<!-- bootstrap color picker -->
+<script src="{% static '/polls/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js' %}"></script>
+<!-- Bootstrap Switch -->
+<script src="{% static '/polls/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+<!-- bs-custom-file-input -->
+<script src="{% static '/polls/plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
+<!-- jquery-validation -->
+<script src="{% static '/polls/plugins/jquery-validation/jquery.validate.min.js' %}"></script>
+<script src="{% static '/polls/plugins/jquery-validation/additional-methods.min.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
 <script>
-      require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
 
-        esriConfig.apiKey = "AAPKe7ebac2aa5574e2dad67e2b3ca85c01ctAA6Qu-ESEZE32ZBQL8pZf2h8mEgvIk22rX59nL0kIeFDU71oA6Qm-t54dG-wTBD";
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
 
-        const map = new Map({
-          basemap: "arcgis-topographic" // Basemap layer service
-        });
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
 
-        const view = new MapView({
-          map: map,
-          center: [-118.805, 34.027], // Longitude, latitude
-          zoom: 13, // Zoom level
-          container: "viewDiv" // Div element
-        });
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
+    })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
 
-      });
-    </script>
+    //Timepicker
+    $('#timepicker').datetimepicker({
+      format: 'LT'
+    })
+    
+    //Bootstrap Duallistbox
+    $('.duallistbox').bootstrapDualListbox()
 
+    //Colorpicker
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    $('.my-colorpicker2').on('colorpickerChange', function(event) {
+      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+    });
+
+    $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
+
+  })
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#quickForm').validate({
+    rules: {
+      name: {
+        required: true
+      },
+      logo: {
+        required: true
+      },
+      SCN: {
+        required: true
+      },
+	  NSSDC_ID: {
+        required: true
+      },
+	   country: {
+        required: true
+      },
+	  agency: {
+        required: true
+      },
+	  sat_system: {
+        required: true
+      },
+	  date_launch: {
+        required: true
+      },
+	  type: {
+        required: true
+      },
+	  mass: {
+        required: true
+      },
+	  al_orbit: {
+        required: true
+	  },
+	  nac_orbit: {
+        required: true
+      },
+	  period_orbit: {
+        required: true
+	  },
+	  TLE: {
+        required: true
+	  },
+	  sat_system: {
+	  required: true
+	  }
+    },
+    messages: {
+      name: {
+        required: "Введите название"
+		},
+	  SCN: "Введите значение",
+	  logo: "Выберете файл",
+	  NSSDC_ID: "Введите значение",
+	  country: "Выберете значение",
+	  agency: "Выберете значение",
+	  sat_system: "Выберете значение",
+	  date_launch: "Выберете дату",
+	  type: "Введите тип",
+	  mass: "Введите значение",
+	  al_orbit: "Введите значение",
+	  nac_orbit: "Введите значение",
+	  period_orbit: "Введите значение",
+	  TLE: "Выберете файл",
+	  sat_system: "Выберете систему"
+    },
+	
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      error.addClass('invalid-feedback');
+      element.closest('.form-group').append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass('is-invalid');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass('is-invalid');
+    }
+  });
+});
+</script>
 {% endblock %}

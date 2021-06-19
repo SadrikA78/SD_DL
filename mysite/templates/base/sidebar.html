@@ -9,61 +9,31 @@
             </a>
 			
             <ul class="nav nav-treeview">
-			{% for v in TYPE_VESSEL %}
+			{% for v in frontirs %}
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>{{v.1}}</p>
+                  <p>{{v}}</p>
 				  <i class="right fa fa-angle-left"></i>
                 </a>
-				{% for ves in vessels %}
-				{% if ves.get_type_display == v.1 %}
-				<ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{% url 'log_pay:ship' ves.id %}" class="nav-link">
-				<i class="fa fa-circle nav-icon"></i>
-                  <p>{{ves.name}}</p>
-                </a>
-              </li>
-			  </ul>
-			  {% endif %}
-			  {% endfor %}
-              </li>
-			  {% endfor %}
-			 {% for cat in cats %}
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>{{cat.name}}</p>
-				  <i class="right fa fa-angle-left"></i>
-                </a>
-				{% for ves in cat.cat.all %}
-				<ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{% url 'log_pay:ship' ves.id %}" class="nav-link">
-				<i class="fa fa-circle nav-icon"></i>
-                  <p>{{ves.name}}</p>
-                </a>
-              </li>
-			  </ul>
-			  {% endfor %}
+				
               </li>
 			  {% endfor %}
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{% url 'log_pay:prognoz' %}" class="nav-link">
               <i class="nav-icon fa fa-globe"></i>
               <p>
-                Обстановка
+                Прогноз
               </p>
             </a>
           </li>
 		  <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
+              <i class="nav-icon fa fa-check"></i>
               <p>
-                Настройки
+                Проверка
               </p>
             </a>
           </li>
